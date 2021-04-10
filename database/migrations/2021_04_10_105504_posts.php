@@ -18,7 +18,7 @@ class Posts extends Migration
             $table->id();
             $table->string('title', 150);
             $table->string('text');
-            $table->integer('votes');
+            $table->integer('votes')->nullable();
             $table->timestamps();
         });
     }

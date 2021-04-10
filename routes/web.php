@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\PostsController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,6 +14,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+
+Route::get('/', [PostsController::class, 'index'])->name('posts.index');
+Route::get('/post/create', [PostsController::class, 'create'])->name('posts.create');
+Route::post('/post/create', [PostsController::class, 'store'])->name('posts.store');

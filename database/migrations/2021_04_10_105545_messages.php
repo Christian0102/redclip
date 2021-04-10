@@ -18,9 +18,9 @@ class Messages extends Migration
             $table->id();
             $table->unsignedBigInteger('post_id');
             $table->foreign('post_id')->references('id')->on('posts');
-            $table->unsignedBigInteger('parent_id');
+            $table->unsignedBigInteger('parent_id')->nullable();
             $table->string('text');
-            $table->integer('votes');
+            $table->integer('votes')->nullable();
             $table->timestamps();
         });
     }
