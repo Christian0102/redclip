@@ -25,17 +25,7 @@
     </div>
 </div>
 <script>
-    $(document).ready(function () {
-        ClassicEditor
-            .create(document.querySelector('#content'))
-            .then(editor => {
-                console.log(editor);
-            })
-            .catch(error => {
-                console.error(error);
-            });
-
-    })
+CKEDITOR.replace( 'content' );
 
 </script>
 @endsection
